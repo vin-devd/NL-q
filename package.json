@@ -1,0 +1,19 @@
+{
+  "name": "azanfc",
+  "version": "1.0.0",
+  "main": "bg.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@discordjs/voice": "^0.17.0",
+    "discord.js": "^14.16.3",
+    "libsodium-wrappers": "^0.7.15",
+    "mongoose": "^8.7.2",
+    "printlogg": "^2.1.0"
+  }
+}
