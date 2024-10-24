@@ -10,9 +10,7 @@ let bot = new Client({
 
 let curindex = 0;
 const audioplayer = new createAudioPlayer()
-const files = [
-    '001.mp3', '002.mp3', '003.mp3', '004.mp3', '005.mp3', '006.mp3', '007.mp3', '008.mp3'
-].map(file => path.join(__dirname, file))
+const files = ['audio.mp3'].map(file => path.join(__dirname, file))
 bot.login(token)
 
 function playnext(connection){
@@ -43,11 +41,11 @@ async function joinplay() {
 bot.on('ready', async() => {
     joinplay()
     setInterval(async () => {
-        const channel = await client.channels.fetch(channelId);
+        const channel = await bot.channels.fetch(channelId);
         if (!channel.members.has(bot.user.id)) {
             joinplay()
             }
-    }, 180000);
+    }, 1000 * 30);
     bot.user.setPresence({activities: [{name: 'NewLife Quran', type: ActivityType.Listening}], status: 'dnd'})
     print('done')
     bot.user.setUsername('NL Quran')
